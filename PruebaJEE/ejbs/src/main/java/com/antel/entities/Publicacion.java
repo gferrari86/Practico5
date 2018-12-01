@@ -1,19 +1,28 @@
 package com.antel.entities;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Calendar;
 
-public abstract class Publicacion {
+@Entity
+@Table(name = "Publicaciones")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 
+public class Publicacion implements Serializable {
+
+    protected Long id;
     private String titulo;
     private Calendar fecha;
 
-    public Publicacion(){
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public Long getId() {
+        return id;
     }
 
-    public Publicacion(String titulo, Calendar fecha) {
-        this.titulo = titulo;
-        this.fecha = fecha;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setTitulo(String titulo) {

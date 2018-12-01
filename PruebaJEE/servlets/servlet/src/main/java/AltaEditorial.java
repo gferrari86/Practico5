@@ -1,4 +1,5 @@
 import com.antel.PlaceEditorialLocal;
+import com.antel.entities.Editorial;
 
 import javax.ejb.EJB;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +21,9 @@ public class AltaEditorial extends HttpServlet {
         String nombreEditorial = req.getParameter("nombre");
 
 
-
+        Editorial e = new Editorial();
+        e.setNombre(nombreEditorial);
+        placeEditorialLocal.addEditorial(e);
 
 
     }

@@ -1,19 +1,13 @@
 package com.antel.entities;
 
+import javax.persistence.Entity;
 import java.util.Calendar;
 
+@Entity(name = "Libro")
 public class Libro extends Publicacion {
 
     private String ISBN;
 
-    public Libro(){
-
-    }
-
-    public Libro(String titulo, Calendar fecha, String ISBN) {
-        super(titulo, fecha);
-        this.ISBN = ISBN;
-    }
 
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;

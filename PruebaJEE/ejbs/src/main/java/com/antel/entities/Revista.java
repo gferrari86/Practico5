@@ -1,19 +1,13 @@
 package com.antel.entities;
 
+import javax.persistence.Entity;
 import java.util.Calendar;
+
+@Entity(name = "Revista")
 
 public class Revista extends Publicacion {
 
     private int numero;
-
-    public Revista(){
-
-    }
-
-    public Revista(String titulo, Calendar fecha, int numero) {
-        super(titulo, fecha);
-        this.numero = numero;
-    }
 
     public int getNumero() {
         return numero;

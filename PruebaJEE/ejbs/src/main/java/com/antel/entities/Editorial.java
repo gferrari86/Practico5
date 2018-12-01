@@ -1,28 +1,39 @@
 package com.antel.entities;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Editorial {
+@Entity
+@Table(name="Editoriales")
+
+public class Editorial implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    protected Long id;
 
     private String nombre;
-    private Integer id;
-    private List<Publicacion> listaPublicacionesEditorial = new ArrayList<Publicacion>();
 
+    @OneToMany
+    @JoinColumn(name="publicacion_id")
+    private List<Publicacion> listaPublicacionesEditorial = new ArrayList<Publicacion>();
     public Editorial(){
 
     }
 
-    public Editorial(String nombre) {
-        this.nombre = nombre;
-    }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public Editorial(String nombre) {
+        this.nombre = nombre;
     }
 
     public List<Publicacion> getListaPublicacionesEditorial() {
