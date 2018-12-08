@@ -1,8 +1,6 @@
-import com.antel.PlaceEditorialLocal;
 import com.antel.entities.Editorial;
 
 import javax.annotation.Resource;
-import javax.ejb.EJB;
 import javax.jms.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
