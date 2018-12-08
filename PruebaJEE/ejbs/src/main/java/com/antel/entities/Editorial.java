@@ -17,7 +17,7 @@ public class Editorial implements Serializable {
     private String nombre;
 
     @OneToMany
-    @JoinColumn(name="publicacion_id")
+    @JoinColumn(name="editorial_id")
     private List<Publicacion> listaPublicacionesEditorial = new ArrayList<Publicacion>();
     public Editorial(){
 
