@@ -1,7 +1,8 @@
-<%@ page import="com.antel.entities.Publicacion, com.antel.entities.Libro, com.antel.entities.Revista, java.util.List, java.util.ArrayList, java.text.SimpleDateFormat"%>
+<%@ page import="com.antel.entities.Publicacion, com.antel.entities.Libro, com.antel.entities.Revista, java.util.List, java.util.ArrayList, java.text.SimpleDateFormat, com.antel.entities.Editorial"%>
 
 <h3> Publicaciones </h3>
 <% List<Publicacion> listaPublicaciones = (ArrayList<Publicacion>)request.getAttribute("listaPublicaciones"); %>
+<% List<Editorial> listaEditoriales = (ArrayList<Editorial>)request.getAttribute("listaEditoriales"); %>
 
 
 <table>
@@ -15,6 +16,7 @@
             <td><%out.println("Editorial");%></td>
         </tr>
 
+    <%int i = 0;%>
     <%for(Publicacion publicacion : listaPublicaciones) { %>
 
 
@@ -46,6 +48,9 @@
             <td><%out.print(Numero);%></td>
 
 
+            <td><%out.print(listaEditoriales.get(i).getNombre());%></td>
+
+            <%i++;%>
 
         </tr>
 

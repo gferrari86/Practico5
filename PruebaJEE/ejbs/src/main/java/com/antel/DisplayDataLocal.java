@@ -8,5 +8,5 @@ import java.util.List;
 @Local
 public interface DisplayDataLocal {
 
-    public List<Publicacion> DisplayAllPublicaciones();
+    public List<Object[]> DisplayAllPublicaciones();
 }
